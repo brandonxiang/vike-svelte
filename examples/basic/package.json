@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "cross-fetch": "^3.1.8",
+    "node-fetch": "^3.3.2",
+    "svelte": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vike": "^0.4.142",
+    "vike-svelte": "link:../../vike-svelte",
+    "vite": "^4.4.9"
+  },
+  "type": "module"
+}

@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "cd vike-svelte/ && pnpm run dev",
+    "build": "cd vike-svelte/ && pnpm run build",
+    "========= Clean": "",
+    "clean": "git clean -Xdf",
+    "reset": "pnpm run clean && pnpm install && pnpm run build",
+    "========= Release": "",
+    "release": "cd vike-svelte/ && pnpm run release",
+    "release:commit": "cd vike-svelte/ && pnpm run release:commit",
+    "========= Only allow pnpm; forbid yarn & npm": "",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "pnpm": {
+    "overrides": {
+      "vike-svelte": "link:./vike-svelte/"
+    }
+  },
+  "packageManager": "pnpm@8.6.12"
+}

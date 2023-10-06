@@ -1,0 +1,58 @@
+{
+  "name": "vike-svelte",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/renderer/+config.js",
+  "types": "./dist/renderer/+config.d.ts",
+  "exports": {
+    ".": "./dist/+config.js",
+    "./renderer/onRenderHtml": "./dist/onRenderHtml.js",
+    "./renderer/onRenderClient": "./dist/onRenderClient.js",
+    "./usePageContext": "./dist/usePageContext.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc --noEmit && rollup -c rollup.config.js",
+    "release": "release-me patch",
+    "release:commit": "release-me commit"
+  },
+  "peerDependencies": {
+    "svelte": "4.x.x",
+    "vike": "^0.4.142",
+    "rollup": "4.x.x"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "rollup": "^4.0.2",
+    "rollup-plugin-svelte": "7.1.6",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@brillout/release-me": "^0.1.7",
+    "svelte": "^4.2.1",
+    "typescript": "^5.2.2",
+    "tslib": "^2.6.2",
+    "vike": "^0.4.142"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/renderer/+config.d.ts"
+      ],
+      "usePageContext": [
+        "./dist/components/usePageContext.d.ts"
+      ],
+      "renderer/onRenderHtml": [
+        "./dist/renderer/onRenderHtml.d.ts"
+      ],
+      "renderer/onRenderClient": [
+        "./dist/renderer/onRenderClient.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist/",
+    "types.d.ts"
+  ],
+  "repository": "github:vikejs/vike-svelte",
+  "license": "MIT"
+}
