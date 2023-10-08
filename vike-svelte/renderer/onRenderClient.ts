@@ -3,21 +3,28 @@ export default onRenderClient
 
 import { PageContext } from 'vike/types'
 import PassThrough from './PassThrough.svelte'
+import { VikeContextKey } from '../components/usePageContext'
+import { ComponentType } from 'svelte'
 
 function onRenderClient(pageContext: PageContext) {
-  const target = document.getElementById('app')
+  const target = document.getElementById('page-view')
 
-  const Layout = pageContext.config.Layout ?? PassThrough
+  const Layout = (pageContext.config.Layout ?? PassThrough) as ComponentType
 
-  const { Page } = pageContext
+  const { Page, pageProps } = pageContext
 
-  new Layout({
-    //@ts-ignore
-    target,
-    hydrate: true,
-    props: {
-      //@ts-ignore
-      Page
-    }
-  })
+
+  if(target && Layout) {
+    new Layout({
+      target,
+      hydrate: true,
+      context: new Map([[VikeContextKey, pageContext]]),
+      props: {
+        pageProps: pageProps,
+        Page
+      }
+    })
+  }
+
+
 }

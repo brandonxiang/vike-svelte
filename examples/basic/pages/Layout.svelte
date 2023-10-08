@@ -1,16 +1,21 @@
 <script>
   export let Page;
   export let pageProps;
+  import Link from '../components/Link.svelte';
 </script>
+
+<svelte:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
 
 <div class="layout">
   <nav class="sidebar">
-    <a class="nav-item" href="/">
+    <Link href="/">
       Home
-    </a>
-    <a class="nav-item" href="/about">
+    </Link>
+    <Link href="/about">
       About
-    </a>
+    </Link>
   </nav>
 
   <div class="content">
@@ -47,10 +52,6 @@
     flex-shrink: 0;
     line-height: 1.8em;
     padding: 42px 20px 20px 20px;
-  }
-
-  .nav-item {
-    padding: 3px;
   }
 
   .content {

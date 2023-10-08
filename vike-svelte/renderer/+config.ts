@@ -63,8 +63,6 @@ declare global {
     interface ConfigVikeSvelte {
       /** The page's root Svelte component */
       Page?: ComponentType
-      /** Svelte element rendered and appended into &lt;head>&lt;/head> */
-      Head?: ComponentType
       /** A component, usually common to several pages, that wraps the root component `Page` */
       Layout?: ComponentType
       /** &lt;title>${title}&lt;/title> */

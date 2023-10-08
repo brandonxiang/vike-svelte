@@ -10,6 +10,7 @@
     "noUncheckedIndexedAccess": true,
     "strict": true,
     "declaration": true,
-    "outDir": "./dist/"
+    "outDir": "./dist/",
+    "types": ["svelte"]
   }
 }
