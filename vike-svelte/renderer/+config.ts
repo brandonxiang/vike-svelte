@@ -16,8 +16,8 @@ const toggleSsrRelatedConfig: ConfigEffect = ({ configDefinedAt, configValue }) 
       // accessible only in the client's renderer.
       Page: {
         env: configValue
-          ? 'server-and-client' // default
-          : 'client-only'
+          ? { server: true, client: true } // default
+          : { client: true },
       }
     }
   }
@@ -27,33 +27,34 @@ export default {
   onRenderHtml: 'import:vike-svelte/renderer/onRenderHtml',
   onRenderClient: 'import:vike-svelte/renderer/onRenderClient',
   passToClient: ['pageProps', 'title'],
+
   clientRouting: true,
   hydrationCanBeAborted: true,
   meta: {
     Head: {
-      env: 'server-only'
+      env: { server: true },
     },
     Layout: {
-      env: 'server-and-client'
+      env: { server: true, client: true },
     },
     title: {
-      env: 'server-and-client'
+      env: { server: true, client: true },
     },
     description: {
-      env: 'server-only'
+      env: { server: true },
     },
     favicon: {
-      env: 'server-only'
+      env: { server: true },
     },
     lang: {
-      env: 'server-only'
+      env: { server: true },
     },
     ssr: {
-      env: 'config-only',
-      effect: toggleSsrRelatedConfig
-    }
-  }
-} satisfies Config
+      env: { config: true },
+      effect: toggleSsrRelatedConfig,
+    },
+  },
+} satisfies Config;
 
 
 // We purposely define the ConfigVikeSvelte interface in this file: that way we ensure it's always applied whenever the user `import vikeSvelte from 'vike-svelte'`

@@ -13,8 +13,7 @@ function onRenderClient(pageContext: PageContext) {
 
   const { Page, pageProps } = pageContext
 
-
-  if(target && Layout) {
+  if (target && Layout) {
     new Layout({
       target,
       hydrate: true,
@@ -25,6 +24,4 @@ function onRenderClient(pageContext: PageContext) {
       }
     })
   }
-
-
 }
