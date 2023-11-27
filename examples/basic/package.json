@@ -11,7 +11,7 @@
     "node-fetch": "^3.3.2",
     "svelte": "^4.2.1",
     "typescript": "^5.2.2",
-    "vike": "^0.4.142",
+    "vike": "^0.4.147",
     "vike-svelte": "link:../../vike-svelte",
     "vite": "^4.4.9"
   },

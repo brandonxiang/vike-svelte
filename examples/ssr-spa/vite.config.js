@@ -1,11 +1,12 @@
 import {svelte} from '@sveltejs/vite-plugin-svelte'
 import ssr from 'vike/plugin'
-import { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 
-export default {
+export default defineConfig({
   plugins: [svelte({
     compilerOptions: {
       hydratable: true
     }
   }), ssr()],
-} satisfies UserConfig
+  optimizeDeps: { include: ['vike-svelte/renderer/onRenderClient'] }
+});

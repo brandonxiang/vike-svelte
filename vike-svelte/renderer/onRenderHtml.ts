@@ -10,7 +10,7 @@ import { VikeContextKey } from '../components/usePageContext'
 async function onRenderHtml(pageContext: PageContext) {
   const Layout = pageContext.config.Layout ?? PassThrough
 
-  const app = (Layout as any).render(pageContext, { context: new Map([[VikeContextKey, { a: 1 }]]) })
+  const app = (Layout as any).render(pageContext, { context: new Map([[VikeContextKey, pageContext]]) })
   const { html, head, css } = app
 
   const title = getTitle(pageContext)

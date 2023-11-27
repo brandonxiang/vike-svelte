@@ -3,7 +3,7 @@ import { getContext } from "svelte"
 
 import { VikeContextKey } from 'vike-svelte/usePageContext'
 
-export let href;
+export let href = '';
 
 
 

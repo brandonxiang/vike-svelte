@@ -1,7 +1,10 @@
 <script>
+// @ts-nocheck
+
   export let Page;
   export let pageProps;
   import Link from '../components/Link.svelte';
+  import logoUrl from '../assets/logo.svg'
 </script>
 
 <svelte:head>
@@ -10,6 +13,16 @@
 
 <div class="layout">
   <nav class="sidebar">
+    <div
+      style={{
+        marginTop: 20,
+        marginBottom: 10
+      }}
+    >
+      <a href="/">
+        <img src={logoUrl} height={64} width={64} alt="">
+      </a>
+    </div>
     <Link href="/">
       SSR
     </Link>

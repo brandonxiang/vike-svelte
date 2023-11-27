@@ -3,7 +3,7 @@
   
   import { VikeContextKey } from 'vike-svelte/usePageContext'
   
-  export let href;
+  export let href = '';
   
   let isActive = false
   
