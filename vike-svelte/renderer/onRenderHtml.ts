@@ -5,7 +5,7 @@ import { escapeInject, dangerouslySkipEscape } from 'vike/server'
 import { PageContext } from 'vike/types'
 import PassThrough from './PassThrough.svelte'
 import { getTitle } from './getTitle'
-import { VikeContextKey } from '../components/usePageContext'
+import { VikeContextKey } from './pageContext'
 
 async function onRenderHtml(pageContext: PageContext) {
   const Layout = pageContext.config.Layout ?? PassThrough

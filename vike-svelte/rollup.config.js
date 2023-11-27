@@ -8,7 +8,7 @@ export default {
     "./renderer/onRenderClient.ts",
     './renderer/onRenderHtml.ts',
     "./renderer/+config.ts",
-    "./components/usePageContext.ts",
+    "./renderer/pageContext.ts",
   ],
   output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
   plugins: [

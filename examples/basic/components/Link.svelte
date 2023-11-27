@@ -1,7 +1,7 @@
 <script>
 import { getContext } from "svelte"
 
-import { VikeContextKey } from 'vike-svelte/usePageContext'
+import { VikeContextKey } from 'vike-svelte/pageContext'
 
 export let href = '';
 

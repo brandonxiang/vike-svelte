@@ -8,7 +8,7 @@
     ".": "./dist/+config.js",
     "./renderer/onRenderHtml": "./dist/onRenderHtml.js",
     "./renderer/onRenderClient": "./dist/onRenderClient.js",
-    "./usePageContext": "./dist/usePageContext.js"
+    "./pageContext": "./dist/pageContext.js"
   },
   "scripts": {
     "dev": "tsc --watch",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "@types/node": "^18.17.4",
+    "vite": "^4.0.0",
     "rollup": "^4.0.2",
     "rollup-plugin-svelte": "7.1.6",
     "@rollup/plugin-typescript": "^11.1.5",
@@ -36,16 +37,16 @@
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/renderer/+config.d.ts"
+        "./dist/+config.d.ts"
       ],
-      "usePageContext": [
-        "./dist/components/usePageContext.d.ts"
+      "pageContext": [
+        "./dist/pageContext.d.ts"
       ],
       "renderer/onRenderHtml": [
-        "./dist/renderer/onRenderHtml.d.ts"
+        "./dist/onRenderHtml.d.ts"
       ],
       "renderer/onRenderClient": [
-        "./dist/renderer/onRenderClient.d.ts"
+        "./dist/onRenderClient.d.ts"
       ]
     }
   },
