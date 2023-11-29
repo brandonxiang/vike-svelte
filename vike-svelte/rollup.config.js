@@ -5,10 +5,10 @@ import typescript from '@rollup/plugin-typescript';
 /** @type {import('rollup').RollupOptions } */
 export default {
   input: [
-    "./renderer/onRenderClient.ts",
-    './renderer/onRenderHtml.ts',
-    "./renderer/+config.ts",
-    "./renderer/pageContext.ts",
+    "./renderer/onRenderClient.js",
+    './renderer/onRenderHtml.js',
+    "./renderer/+config.js",
+    "./renderer/pageContext.js",
   ],
   output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
   plugins: [

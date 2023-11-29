@@ -1,9 +1,13 @@
 export { getTitle }
 
-import type { PageContext } from 'vike/types'
 import { isCallable } from './utils/isCallable.js'
 
-function getTitle(pageContext: PageContext): null | string {
+/**
+ * 
+ * @param {import('vike/types').PageContext} pageContext 
+ * @returns { null | string }
+ */
+function getTitle(pageContext) {
   if (pageContext.title) {
     if (typeof pageContext.title !== 'string') {
       throw new Error('pageContext.title should be a string')
