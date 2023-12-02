@@ -11,28 +11,29 @@
     "./pageContext": "./dist/pageContext.js"
   },
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc --noEmit && rollup -c rollup.config.js",
+    "dev": "rollup -cw",
+    "build": "rollup -c",
     "release": "release-it"
   },
   "peerDependencies": {
     "svelte": "4.x.x",
-    "vike": "^0.4.142",
-    "rollup": "4.x.x"
+    "vike": "0.x.x",
+    "vite": "4.x.x"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.4.6",
-    "@types/node": "^18.17.4",
-    "vite": "^4.0.0",
-    "rollup": "^4.0.2",
-    "rollup-plugin-svelte": "7.1.6",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
-    "@rollup/plugin-node-resolve": "^15.2.2",
-    "svelte": "^4.2.1",
-    "typescript": "^5.2.2",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
+    "@types/node": "^18.19.1",
+    "release-it": "^17.0.0",
+    "rollup": "^4.6.1",
+    "rollup-plugin-svelte": "^7.1.6",
+    "svelte": "^4.2.8",
+    "taze": "^0.13.0",
     "tslib": "^2.6.2",
-    "vike": "^0.4.142",
-    "release-it": "^16.1.0"
+    "typescript": "^5.3.2",
+    "vike": "^0.4.147",
+    "vite": "^4.5.0"
   },
   "typesVersions": {
     "*": {
@@ -51,9 +52,8 @@
     }
   },
   "files": [
-    "dist/",
-    "types.d.ts"
+    "dist/"
   ],
-  "repository": "github:vikejs/vike-svelte",
+  "repository": "github:brandonxiang/vike-svelte",
   "license": "MIT"
 }

@@ -1,16 +1,16 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
+import svelte from 'rollup-plugin-svelte'
+import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+import { defineConfig } from 'rollup'
 
-/** @type {import('rollup').RollupOptions } */
-export default {
+export default defineConfig({
   input: [
-    "./renderer/onRenderClient.ts",
+    './renderer/onRenderClient.ts',
     './renderer/onRenderHtml.ts',
-    "./renderer/+config.ts",
-    "./renderer/pageContext.ts",
+    './renderer/+config.ts',
+    './renderer/pageContext.ts'
   ],
-  output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
+  output: [{ dir: 'dist', format: 'es', sanitizeFileName: false }],
   plugins: [
     typescript(),
     svelte({
@@ -21,6 +21,7 @@ export default {
     resolve({
       exportConditions: ['svelte'],
       extensions: ['.svelte']
-    }),
-  ]
-}
+    })
+  ],
+  external: ['vike/server']
+})
