@@ -2,7 +2,7 @@
 export default onRenderClient
 
 import { PageContext } from 'vike/types'
-import PassThrough from './PassThrough.svelte'
+import PassThrough from './components/PassThrough.svelte'
 import { VikeContextKey } from './pageContext'
 import { ComponentType } from 'svelte'
 
