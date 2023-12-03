@@ -15,6 +15,7 @@ export default defineConfig({
     typescript(),
     svelte({
       compilerOptions: {
+        generate: 'ssr',
         hydratable: true
       }
     }),
