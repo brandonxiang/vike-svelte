@@ -32,6 +32,30 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
+  examples/client-only:
+    dependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^3.0.1
+        version: 3.0.1(svelte@4.2.8)(vite@5.0.4)
+      esm-env:
+        specifier: ^1.0.0
+        version: 1.0.0
+      svelte:
+        specifier: ^4.2.8
+        version: 4.2.8
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vike:
+        specifier: ^0.4.147
+        version: 0.4.147(vite@5.0.4)
+      vike-svelte:
+        specifier: link:../../vike-svelte
+        version: link:../../vike-svelte
+      vite:
+        specifier: ^5.0.4
+        version: 5.0.4
+
   examples/default-layout:
     dependencies:
       '@sveltejs/vite-plugin-svelte':
@@ -94,6 +118,9 @@ importers:
       '@types/node':
         specifier: ^18.19.1
         version: registry.npmmirror.com/@types/node@18.19.1
+      esm-env:
+        specifier: ^1.0.0
+        version: 1.0.0
       release-it:
         specifier: ^17.0.0
         version: registry.npmmirror.com/release-it@17.0.0(typescript@5.3.2)
@@ -1165,6 +1192,9 @@ packages:
       '@esbuild/win32-ia32': 0.19.8
       '@esbuild/win32-x64': 0.19.8
     dev: false
+
+  /esm-env@1.0.0:
+    resolution: {integrity: sha512-Cf6VksWPsTuW01vU9Mk/3vRue91Zevka5SjyNf3nEpokFRuqt/KjUQoGAwq9qMmhpLTHmXzSIrFRw8zxWzmFBA==}
 
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}

@@ -1,0 +1,1 @@
+<div>server side rendering</div>

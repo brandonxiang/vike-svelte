@@ -3,5 +3,7 @@
   export let pageProps;
 </script>
 
+<div>
+  <svelte:component this={Page} {...pageProps} />
+</div>
 
-<svelte:component this={Page} {...pageProps} />

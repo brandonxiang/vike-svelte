@@ -2,9 +2,9 @@
 export default onRenderClient
 
 import { PageContext } from 'vike/types'
-import PassThrough from './components/PassThrough.svelte'
+import PassThrough from '../components/PassThrough.svelte'
 import { VikeContextKey } from './pageContext'
-import { ComponentType } from 'svelte'
+import type { ComponentType } from 'svelte'
 
 function onRenderClient(pageContext: PageContext) {
   const target = document.getElementById('page-view')
