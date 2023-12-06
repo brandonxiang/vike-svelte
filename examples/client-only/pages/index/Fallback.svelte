@@ -1,1 +1,1 @@
-<div>server side rendering</div>
+<div>customized loading ...</div>

@@ -2,4 +2,4 @@
   export let name = 'World';
 </script>
 
-<div>Client Hello {name}</div>
+<div>Client Render: Hello {name}</div>

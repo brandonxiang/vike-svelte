@@ -2,15 +2,20 @@
 export default onRenderHtml
 
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
-import { PageContext } from 'vike/types'
 import PassThrough from '../components/PassThrough.svelte'
 import { getTitle } from './getTitle'
 import { VikeContextKey } from './pageContext'
 
-async function onRenderHtml(pageContext: PageContext) {
+/**
+ * 
+ * @param {import('vike/types').PageContext} pageContext 
+ * @returns 
+ */
+async function onRenderHtml(pageContext) {
+  /** @type{*} */
   const Layout = pageContext.config.Layout ?? PassThrough
 
-  const app = (Layout as any).render(pageContext, { context: new Map([[VikeContextKey, pageContext]]) })
+  const app = Layout.render(pageContext, { context: new Map([[VikeContextKey, pageContext]]) })
   const { html, head, css } = app
 
   const title = getTitle(pageContext)
