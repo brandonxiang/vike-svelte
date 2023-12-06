@@ -2,17 +2,24 @@
   "compilerOptions": {
     "checkJs": true,
     "allowJs": true,
-    "module": "ES2020",
+    "module": "ESNext",
     "moduleResolution": "Node",
-    "target": "ES2019",
+    "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true,
     "strict": true,
+    "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "./dist/",
     "types": ["svelte"]
-  }
+  },
+  "exclude": [
+    "./rollup.config.js"
+  ],
+  "include": [
+    "./renderer"
+  ]
 }

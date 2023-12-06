@@ -1,6 +1,6 @@
 import { ComponentType as Component } from "svelte"
 
-type PageProps = Record<string, unknown>
+export type PageProps = Record<string, unknown>
 
 declare global {
   namespace Vike {

@@ -2,17 +2,19 @@
   "name": "vike-svelte",
   "version": "0.0.1",
   "type": "module",
-  "main": "./dist/renderer/+config.js",
-  "types": "./dist/renderer/+config.d.ts",
+  "main": "./render/+config.js",
+  "types": "./dist/+config.d.ts",
   "exports": {
-    ".": "./dist/+config.js",
-    "./renderer/onRenderHtml": "./dist/onRenderHtml.js",
-    "./renderer/onRenderClient": "./dist/onRenderClient.js",
-    "./pageContext": "./dist/pageContext.js"
+    ".": "./renderer/+config.js",
+    "./renderer/onRenderHtml": "./renderer/onRenderHtml.js",
+    "./renderer/onRenderClient": "./renderer/onRenderClient.js",
+    "./pageContext": "./renderer/pageContext.js"
   },
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc --noEmit && rollup -c rollup.config.js",
+    "dev": "rollup -cw",
+    "build": "npm run build:js",
+    "build:js": "rollup -c",
+    "tsd": "tsc",
     "release": "release-it"
   },
   "peerDependencies": {
@@ -37,7 +39,8 @@
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/+config.d.ts"
+        "./dist/+config.d.ts",
+        "./renderer/types.d.ts"
       ],
       "pageContext": [
         "./dist/pageContext.d.ts"

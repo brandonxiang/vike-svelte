@@ -12,7 +12,6 @@ export default {
   ],
   output: [{ dir: "dist", format: "es", sanitizeFileName: false }],
   plugins: [
-    typescript(),
     svelte({
       compilerOptions: {
         hydratable: true
