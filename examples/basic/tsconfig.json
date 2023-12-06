@@ -10,5 +10,6 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
     "esModuleInterop": true
-  }
+  },
+  "exclude": ["dist"]
 }
