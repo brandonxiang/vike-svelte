@@ -27,9 +27,9 @@ jobs:
         run: pnpm run build
         working-directory: ./examples/ssr-spa
 
-      # - name: Test TypeScript examples/basic
-      #   run: pnpm run test
-      #   working-directory: ./examples/basic
-      # - name: Test TypeScript examples/ssr-spa
-      #   run: pnpm run test
-      #   working-directory: ./examples/ssr-spa
+      - name: Test TypeScript examples/basic
+        run: pnpm run test
+        working-directory: ./examples/basic
+      - name: Test TypeScript examples/ssr-spa
+        run: pnpm run test
+        working-directory: ./examples/ssr-spa

@@ -6,9 +6,8 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
+    "esm-env": "^1.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
-    "cross-fetch": "^3.1.8",
-    "node-fetch": "^3.3.2",
     "svelte": "^4.2.8",
     "typescript": "^5.2.2",
     "vike": "^0.4.147",

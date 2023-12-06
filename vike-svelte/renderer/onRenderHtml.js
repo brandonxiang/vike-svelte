@@ -2,7 +2,7 @@
 export default onRenderHtml
 
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
-import PassThrough from './PassThrough.svelte'
+import PassThrough from '../components/PassThrough.svelte'
 import { getTitle } from './getTitle'
 import { VikeContextKey } from './pageContext'
 

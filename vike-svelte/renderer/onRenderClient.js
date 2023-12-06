@@ -1,6 +1,6 @@
 export default onRenderClient
 
-import PassThrough from './PassThrough.svelte'
+import PassThrough from '../components/PassThrough.svelte'
 import { VikeContextKey } from './pageContext'
 
 /**

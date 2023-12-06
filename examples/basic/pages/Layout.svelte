@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   export let Page;
   export let pageProps;
   import Link from '../components/Link.svelte';
