@@ -16,16 +16,16 @@
     "release": "release-it"
   },
   "peerDependencies": {
-    "svelte": "4.x.x",
-    "vike": "0.x.x"
+    "svelte": "4.2.19",
+    "vike": "0.4.199"
   },
   "devDependencies": {
     "@types/node": "^18.19.1",
-    "release-it": "^17.0.0",
-    "svelte": "^4.2.8",
-    "taze": "^0.13.0",
-    "typescript": "^5.3.2",
-    "vike": "^0.4.147",
+    "release-it": "^17.9.0",
+    "svelte": "^4.2.19",
+    "taze": "^0.17.2",
+    "typescript": "^5.6.3",
+    "vike": "^0.4.199",
     "esm-env": "^1.0.0"
   },
   "typesVersions": {
