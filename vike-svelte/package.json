@@ -16,13 +16,13 @@
     "release": "release-it"
   },
   "peerDependencies": {
-    "svelte": "4.x.x",
+    "svelte": "5.2.4",
     "vike": "0.x.x"
   },
   "devDependencies": {
     "@types/node": "^18.19.1",
     "release-it": "^17.0.0",
-    "svelte": "^4.2.8",
+    "svelte": "^5.2.4",
     "taze": "^0.13.0",
     "typescript": "^5.3.2",
     "vike": "^0.4.147",
