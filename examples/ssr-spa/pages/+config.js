@@ -1,4 +1,4 @@
-import vikeSvelte from 'vike-svelte'
+import vikeSvelte from 'vike-svelte/config'
 import Layout from '../layout/LayoutDefault.svelte'
 import logoUrl from '../assets/logo.svg'
 

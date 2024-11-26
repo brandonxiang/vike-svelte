@@ -1,7 +1,13 @@
 <script>
-  /** @type {boolean} */
-  export let is404
-  export let errorInfo = '';
+  
+  /**
+   * @typedef {Object} Props
+   * @property {boolean} is404
+   * @property {string} [errorInfo]
+   */
+
+  /** @type {Props} */
+  let { is404, errorInfo = '' } = $props();
 </script>
 
 {#if is404}

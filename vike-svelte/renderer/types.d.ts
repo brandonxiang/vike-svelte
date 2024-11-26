@@ -1,4 +1,4 @@
-import { ComponentType as Component } from "svelte"
+import { Component } from "svelte"
 
 export type PageProps = Record<string, unknown>
 
@@ -19,7 +19,7 @@ declare global {
       /** The page's root Svelte component */
       Page?: Component
       /** A component, usually common to several pages, that wraps the root component `Page` */
-      Layout?: Component
+      Layout?: Array<Component>
       /** &lt;title>${title}&lt;/title> */
       title?: string
       /** &lt;meta name="description" content="${description}" /> */

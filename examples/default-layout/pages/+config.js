@@ -1,4 +1,4 @@
-import vikeSvelte from 'vike-svelte'
+import vikeSvelte from 'vike-svelte/config'
 
 /**
  * @satisfies {import("vike/types").Config} 

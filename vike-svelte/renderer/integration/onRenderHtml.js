@@ -1,22 +1,23 @@
 // https://vike.dev/onRenderHtml
-export default onRenderHtml
+export {onRenderHtml}
 
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
-import PassThrough from '../components/PassThrough.svelte'
-import { getTitle } from './getTitle'
-import { VikeContextKey } from './pageContext'
+import PassThrough from '../../components/PassThrough.svelte'
+import { getTitle } from '../getTitle.js'
+import { VikeContextKey } from '../pageContext.js'
+import { render } from 'svelte/server'
 
 /**
  * 
  * @param {import('vike/types').PageContext} pageContext 
  * @returns 
  */
-async function onRenderHtml(pageContext) {
+function onRenderHtml(pageContext) {
   /** @type{*} */
-  const Layout = pageContext.config.Layout ?? PassThrough
+  const Layout = pageContext.config.Layout?.[0] ?? PassThrough
 
-  const app = Layout.render(pageContext, { context: new Map([[VikeContextKey, pageContext]]) })
-  const { html, head, css } = app
+  const app = render(Layout, { context: new Map([[VikeContextKey, pageContext]]), props:pageContext })
+  const { body, head } = app
 
   const title = getTitle(pageContext)
   const titleTag = !title ? '' : escapeInject`<title>${title}</title>`
@@ -37,11 +38,10 @@ async function onRenderHtml(pageContext) {
           ${titleTag}
           ${descriptionTag}
           ${dangerouslySkipEscape(head)}
-          <style>${css.code}</style>
         </head>
         <body>
           <div id="page-view">
-            ${dangerouslySkipEscape(html)}
+            ${dangerouslySkipEscape(body)}
           </div>
         </body>
       </html>`

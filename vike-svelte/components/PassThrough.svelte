@@ -1,9 +1,8 @@
 <script>
-  export let Page;
-  export let pageProps;
+  let { Page, pageProps } = $props();
 </script>
 
 <div>
-  <svelte:component this={Page} {...pageProps} />
+  <Page {...pageProps} />
 </div>
 

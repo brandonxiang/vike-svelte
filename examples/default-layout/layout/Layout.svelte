@@ -1,10 +1,16 @@
 <script>
-  //@ts-nocheck
-  export let Page;
-  export let pageProps;
+  
+  /**
+   * @typedef {Object} Props
+   * @property {any} Page
+   * @property {any} pageProps
+   */
+
+  /** @type {Props} */
+  let { Page, pageProps } = $props();
 </script>
 
 <div>
-  <svelte:component this={Page} {...pageProps} />
+  <Page {...pageProps} />
 </div>
 

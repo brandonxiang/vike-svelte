@@ -1,10 +1,16 @@
 <script>
-// @ts-nocheck
 
-  export let Page;
-  export let pageProps;
+
   import Link from '../components/Link.svelte';
   import logoUrl from '../assets/logo.svg'
+  /**
+   * @typedef {Object} Props
+   * @property {any} Page
+   * @property {any} pageProps
+   */
+
+  /** @type {Props} */
+  let { Page, pageProps } = $props();
 </script>
 
 <svelte:head>
@@ -32,7 +38,7 @@
   </nav>
 
   <div class="content">
-    <svelte:component this={Page} {...pageProps} />
+    <Page {...pageProps} />
   </div>
 </div>
 

@@ -5,32 +5,33 @@
   "main": "./render/+config.js",
   "types": "./dist/+config.d.ts",
   "exports": {
-    ".": "./renderer/+config.js",
-    "./renderer/onRenderHtml": "./renderer/onRenderHtml.js",
-    "./renderer/onRenderClient": "./renderer/onRenderClient.js",
-    "./pageContext": "./renderer/pageContext.js",
-    "./ClientOnly": "./components/ClientOnly.svelte"
+    "./config": "./renderer/+config.js",
+    "./clientOnly": "./components/ClientOnly.svelte",
+    "./__internal/integration/onRenderHtml": "./renderer/integration/onRenderHtml.js",
+    "./__internal/integration/onRenderClient": "./renderer/integration/onRenderClient.js",
+    "./pageContext": "./renderer/pageContext.js"
   },
   "scripts": {
     "build": "tsc",
     "release": "release-it"
   },
   "peerDependencies": {
-    "svelte": "5.2.4",
-    "vike": "0.x.x"
+    "svelte": "5.x",
+    "solid-js": "^1.8.7",
+    "vike": ">=0.4.195",
+    "vite": ">=5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.19.1",
-    "release-it": "^17.0.0",
-    "svelte": "^5.2.4",
-    "taze": "^0.13.0",
-    "typescript": "^5.3.2",
-    "vike": "^0.4.147",
-    "esm-env": "^1.0.0"
+    "@types/node": "^22.9.1",
+    "release-it": "^17.10.0",
+    "svelte": "^5.2.7",
+    "typescript": "^5.6.3",
+    "vike": "^0.4.204",
+    "esm-env": "^1.1.4"
   },
   "typesVersions": {
     "*": {
-      ".": [
+      "config": [
         "./dist/+config.d.ts",
         "./renderer/types.d.ts"
       ],

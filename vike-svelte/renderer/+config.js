@@ -1,45 +1,38 @@
+import { ssrEffect } from './integration/ssrEffect.js';
 
-
-
-/**
- * Depending on the value of `config.meta.ssr`, set other config options' `env`
- * accordingly.
- * See https://vike.dev/meta#modify-existing-configurations
- * @type {import('vike/types').ConfigEffect}
- */
-const toggleSsrRelatedConfig = ({ configDefinedAt, configValue }) => {
-  if (typeof configValue !== 'boolean') {
-    throw new Error(`${configDefinedAt} should be a boolean`)
-  }
-
-  return {
-    meta: {
-      // When the SSR flag is false, we want to render the page only in the
-      // browser. We achieve this by then making the `Page` implementation
-      // accessible only in the client's renderer.
-      Page: {
-        env: configValue
-          ? { server: true, client: true } // default
-          : { client: true },
-      }
-    }
-  }
-}
 
 /** @satisfies {import('vike/types').Config} */
 export default {
-  onRenderHtml: 'import:vike-svelte/renderer/onRenderHtml',
-  onRenderClient: 'import:vike-svelte/renderer/onRenderClient',
-  passToClient: ['pageProps', 'title'],
 
+  name: "vike-svelte",
+  require: {
+    vike: ">=0.4.195",
+  },
+
+  // https://vike.dev/onRenderHtml
+  onRenderHtml: "import:vike-svelte/__internal/integration/onRenderHtml:onRenderHtml",
+  // https://vike.dev/onRenderClient
+  onRenderClient: "import:vike-svelte/__internal/integration/onRenderClient:onRenderClient",
+
+  // https://vike.dev/clientRouting
   clientRouting: true,
   hydrationCanBeAborted: true,
+  
+  passToClient: ["_configFromHook"],
+
+  // https://vike.dev/meta
   meta: {
     Head: {
       env: { server: true },
+      cumulative: true,
     },
     Layout: {
       env: { server: true, client: true },
+      cumulative: true,
+    },
+    Wrapper: {
+      env: { server: true, client: true },
+      cumulative: true,
     },
     title: {
       env: { server: true, client: true },
@@ -47,15 +40,36 @@ export default {
     description: {
       env: { server: true },
     },
-    favicon: {
+    viewport: {
       env: { server: true },
     },
-    lang: {
+    favicon: {
       env: { server: true },
+      global: true,
+    },
+    lang: {
+      env: { server: true, client: true },
     },
     ssr: {
       env: { config: true },
-      effect: toggleSsrRelatedConfig,
+      effect: ssrEffect,
+    },
+    stream: {
+      env: { server: true },
+    },
+    htmlAttributes: {
+      env: { server: true },
+      global: true,
+      cumulative: true, // for Vike extensions
+    },
+    bodyAttributes: {
+      env: { server: true },
+      global: true,
+      cumulative: true, // for Vike extensions
+    },
+    onAfterRenderClient: {
+      env: { server: false, client: true },
+      cumulative: true,
     },
   },
 };
