@@ -11,5 +11,5 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "exclude": ["dist"]
+  "exclude": ["../minimal/distin/dist"]
 }
