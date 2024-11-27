@@ -1,9 +1,6 @@
 <script>
-  import { run } from 'svelte/legacy';
-
-import { getContext } from "svelte"
-
-import { VikeContextKey } from 'vike-svelte/pageContext'
+  import { getContext } from 'svelte'
+  import { VikeContextKey } from 'vike-svelte/pageContext'
 
   /**
    * @typedef {Object} Props
@@ -12,26 +9,22 @@ import { VikeContextKey } from 'vike-svelte/pageContext'
    */
 
   /** @type {Props} */
-  let { href = '', children } = $props();
+  let { href = '', children } = $props()
 
+  let isActive = $state(false)
 
+  const pageContext = getContext(VikeContextKey)
 
-let isActive = $state(false)
+  $effect(() => {
+    const { urlPathname } = pageContext
 
-const pageContext = getContext(VikeContextKey);
-
-run(() => {
-  const { urlPathname } = pageContext
-
-  if(urlPathname) {
-    isActive = href === '/' ? urlPathname === href : urlPathname.startsWith(href)
-  }
-});
-
-
+    if (urlPathname) {
+      isActive = href === '/' ? urlPathname === href : urlPathname.startsWith(href)
+    }
+  })
 </script>
 
-<a class:active={isActive} href={href}>
+<a class:active={isActive} {href}>
   {@render children?.()}
 </a>
 

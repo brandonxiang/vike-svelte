@@ -4,12 +4,10 @@
   /**
    * @typedef {Object} Props
    * @property {any} Page
-   * @property {any} pageProps
    */
 
   /** @type {Props} */
-  let { Page, pageProps } = $props();
-  console.log(Page, pageProps);
+  let { Page } = $props();
 </script>
 
 <svelte:head>
@@ -27,7 +25,7 @@
   </nav>
 
   <div class="content">
-    <Page {...pageProps} />
+    <Page />
   </div>
 </div>
 

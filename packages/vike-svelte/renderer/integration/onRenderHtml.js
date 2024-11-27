@@ -1,8 +1,9 @@
 // https://vike.dev/onRenderHtml
-export {onRenderHtml}
+export { onRenderHtml }
 
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
 import PassThrough from '../../components/PassThrough.svelte'
+import Empty from '../../components/Empty.svelte'
 import { getTitle } from '../getTitle.js'
 import { VikeContextKey } from '../pageContext.js'
 import { render } from 'svelte/server'
@@ -14,9 +15,11 @@ import { render } from 'svelte/server'
  */
 function onRenderHtml(pageContext) {
   /** @type{*} */
-  const Layout = pageContext.config.Layout?.[0] ?? PassThrough
+  const Layout = pageContext.config.Layout?.[0] ?? PassThrough;
+  const Page = pageContext.Page ?? Empty;
+  console.log('Rendering SSR page1', Page);
 
-  const app = render(Layout, { context: new Map([[VikeContextKey, pageContext]]), props:pageContext })
+  const app = render(Layout, { context: new Map([[VikeContextKey, pageContext]]), props: { Page } })
   const { body, head } = app
 
   const title = getTitle(pageContext)
@@ -40,7 +43,7 @@ function onRenderHtml(pageContext) {
           ${dangerouslySkipEscape(head)}
         </head>
         <body>
-          <div id="page-view">
+          <div id="root">
             ${dangerouslySkipEscape(body)}
           </div>
         </body>

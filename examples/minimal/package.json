@@ -10,7 +10,7 @@
     "svelte": "^5.2.7",
     "typescript": "^5.6.3",
     "vike": "^0.4.204",
-    "vike-svelte": "link:../../vike-svelte",
+    "vike-svelte": "link:../../packages/vike-svelte",
     "vite": "^5.4.11"
   },
   "type": "module"

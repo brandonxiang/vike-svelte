@@ -13,7 +13,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vike-svelte": "link:./vike-svelte/"
+      "vike-svelte": "link:./packages/vike-svelte/"
     }
   },
   "packageManager": "pnpm@8.6.12"

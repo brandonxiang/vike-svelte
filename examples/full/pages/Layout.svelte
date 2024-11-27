@@ -6,11 +6,13 @@
   /**
    * @typedef {Object} Props
    * @property {any} Page
-   * @property {any} pageProps
    */
 
   /** @type {Props} */
-  let { Page, pageProps } = $props();
+  let { Page } = $props();
+
+  console.log('Rendering Layout', Page);
+
 </script>
 
 <svelte:head>
@@ -30,15 +32,16 @@
       </a>
     </div>
     <Link href="/">
-      SSR
+      Welcome
     </Link>
-    <Link href="/spa">
-      SPA
+    <Link href="/without-ssr">
+      Without SSR
     </Link>
+    <Link href="/client-only">Client only</Link>
   </nav>
 
   <div class="content">
-    <Page {...pageProps} />
+    <Page />
   </div>
 </div>
 

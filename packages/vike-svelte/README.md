@@ -3,7 +3,7 @@
 
 # 🚧 WIP `vike-svelte`
 
-SolidJS integration for [Vike](https://github.com/vikejs/vike) (using the [V1 design](https://vike.dev/migration/v1-design)).
+Svelte integration for [Vike](https://github.com/vikejs/vike) (using the [V1 design](https://vike.dev/migration/v1-design)).
 
 > [!NOTE]  
 > For integrations with React and Vue, see the other [`vike-*` packages](https://vike.dev/vike-packages).

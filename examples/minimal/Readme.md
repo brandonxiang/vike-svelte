@@ -1,8 +1,7 @@
-Example of selecting SPA or SSR on a per-page basis. See
-[SPA vs SSR (and more)](https://vike.dev/SPA-vs-SSR).
+Minimal example of using `vike-svelte`.
 
 ```bash
-npx degit brandonxiang/vike-svelte/examples/basic/
+npx degit brandonxiang/vike-svelte/examples/minimal/
 pnpm install
 pnpm run dev
 ```

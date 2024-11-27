@@ -1,8 +1,10 @@
 <script>
-  import Counter from './Counter.svelte'
+  import Counter from '../components/Counter.svelte'
+  let title = $state('Welcome');
+
 </script>
 
-<h1>Welcome</h1>
+<h1>{title}</h1>
 
 This page is:
 

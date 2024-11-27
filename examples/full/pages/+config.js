@@ -1,5 +1,5 @@
 import vikeSvelte from 'vike-svelte/config'
-import Layout from '../layout/LayoutDefault.svelte'
+import Layout from './Layout.svelte'
 import logoUrl from '../assets/logo.svg'
 
 /**
