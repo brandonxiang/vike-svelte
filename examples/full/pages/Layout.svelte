@@ -34,6 +34,7 @@
     <Link href="/">
       Welcome
     </Link>
+    <Link href="/star-wars">Data Fetching</Link>
     <Link href="/without-ssr">
       Without SSR
     </Link>

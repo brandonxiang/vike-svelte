@@ -5,7 +5,11 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
@@ -14,12 +18,13 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "./dist/",
-    "types": ["svelte"]
+    "types": [
+      "svelte"
+    ]
   },
-  "exclude": [
-    "./rollup.config.js"
-  ],
   "include": [
-    "./renderer"
+    "./renderer",
+    "./hooks",
+    "./components",
   ]
 }

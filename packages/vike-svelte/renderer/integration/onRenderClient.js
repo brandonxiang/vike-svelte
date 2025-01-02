@@ -2,7 +2,7 @@ export { onRenderClient }
 
 import Empty from '../../components/Empty.svelte';
 import PassThrough from '../../components/PassThrough.svelte'
-import { VikeContextKey } from '../pageContext'
+import { PageKey } from '../../hooks/context.js'
 import { hydrate, mount, unmount } from 'svelte';
 
 /**
@@ -32,13 +32,11 @@ function onRenderClient(pageContext) {
     if(root) {
       unmount(root);
     }
-    console.log('Rendering Client page', pageContext.isHydration);
-    console.log('target.innerHTML', target.innerHTML);
 
     if (pageContext.isHydration) {
       root = hydrate(Layout, {
         target,
-        context: new Map([[VikeContextKey, pageContext]]),
+        context: new Map([[PageKey, pageContext]]),
         props: {
           Page,
         }
@@ -46,37 +44,11 @@ function onRenderClient(pageContext) {
     } else {
       root = mount(Layout, {
         target,
-        context: new Map([[VikeContextKey, pageContext]]),
+        context: new Map([[PageKey, pageContext]]),
         props: {
           Page,
         }
       });
     }
 
-  
-
-  // if (target && Layout) {
-    // if(pageContext.isHydration) {
-      // root = hydrate(Layout, {
-      //   target,
-      //   context: new Map([[VikeContextKey, pageContext]]),
-      //   props: {
-      //     Page,
-      //   }
-      // });
-      // console.log(1111, root);
-    // } else {
-    //   if(!root) {
-    //     mount(Layout, {
-    //       target,
-    //       context: new Map([[VikeContextKey, pageContext]]),
-    //       props: {
-    //         Page,
-    //       }
-    //     });
-    //   }
-     
-    // }
-    
-  // }
 }

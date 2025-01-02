@@ -9,7 +9,7 @@
     "./clientOnly": "./components/ClientOnly.svelte",
     "./__internal/integration/onRenderHtml": "./renderer/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./renderer/integration/onRenderClient.js",
-    "./pageContext": "./renderer/pageContext.js"
+    "./context": "./hooks/context.js"
   },
   "scripts": {
     "build": "tsc",
@@ -32,24 +32,24 @@
   "typesVersions": {
     "*": {
       "config": [
-        "./dist/+config.d.ts",
-        "./renderer/types.d.ts"
+        "./dist/+config.d.ts"
       ],
-      "pageContext": [
-        "./dist/pageContext.d.ts"
+      "__internal/integration/onRenderHtml": [
+        "./dist/renderer/integration/onRenderHtml.d.ts"
       ],
-      "renderer/onRenderHtml": [
-        "./dist/onRenderHtml.d.ts"
+      "__internal/integration/onRenderClient": [
+        "./dist/renderer/integration/onRenderClient.d.ts"
       ],
-      "renderer/onRenderClient": [
-        "./dist/onRenderClient.d.ts"
+      "context": [
+        "./dist/hooks/context.d.ts"
       ]
     }
   },
   "files": [
     "dist/",
     "renderer/",
-    "components/"
+    "components/",
+    "hooks/"
   ],
   "repository": "github:brandonxiang/vike-svelte",
   "license": "MIT"

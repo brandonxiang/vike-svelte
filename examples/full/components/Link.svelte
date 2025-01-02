@@ -1,9 +1,7 @@
 <script>
-  import { run } from 'svelte/legacy';
-
   import { getContext } from "svelte"
   
-  import { VikeContextKey } from 'vike-svelte/pageContext'
+  import { PageKey } from 'vike-svelte/context'
   
   /**
    * @typedef {Object} Props
@@ -16,9 +14,9 @@
   
   let isActive = $state(false)
   
-  const pageContext = getContext(VikeContextKey);
+  const pageContext = getContext(PageKey);
   
-  run(() => {
+  $effect(() => {
     const { urlPathname } = pageContext
   
     if(urlPathname) {
