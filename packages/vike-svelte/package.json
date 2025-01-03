@@ -1,6 +1,6 @@
 {
   "name": "vike-svelte",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "type": "module",
   "main": "./render/+config.js",
   "types": "./dist/+config.d.ts",
