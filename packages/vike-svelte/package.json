@@ -16,18 +16,18 @@
     "release": "release-it"
   },
   "peerDependencies": {
-    "svelte": "5.x",
-    "solid-js": "^1.8.7",
-    "vike": ">=0.4.195",
-    "vite": ">=5.0.0"
+    "svelte": "5.16.1",
+    "solid-js": "^1.9.3",
+    "vike": ">=0.4.211",
+    "vite": ">=5.4.11"
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
-    "release-it": "^17.10.0",
-    "svelte": "^5.2.7",
-    "typescript": "^5.6.3",
-    "vike": "^0.4.204",
-    "esm-env": "^1.1.4"
+    "release-it": "^17.11.0",
+    "svelte": "^5.16.1",
+    "typescript": "^5.7.2",
+    "vike": "^0.4.211",
+    "esm-env": "^1.2.1"
   },
   "typesVersions": {
     "*": {
