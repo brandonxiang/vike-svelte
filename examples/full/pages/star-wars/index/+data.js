@@ -6,10 +6,8 @@ import fetch from 'node-fetch'
 
 const data = async () => {
   const response = await fetch('https://brillout.github.io/star-wars/api/films.json')
-  /**
-   * @type {import('../types').MovieDetails[]}
-   */
-  const moviesData = (await response.json());
+
+   const moviesData = /** @type {import('../types').MovieDetails[]} */(await response.json());
   // We remove data we don't need because the data is passed to the client; we should
   // minimize what is sent over the network.
   const movies = minimize(moviesData)

@@ -12,4 +12,5 @@
  * }} MovieDetails
  */
 
+// @ts-ignore
 export { Movie, MovieDetails }

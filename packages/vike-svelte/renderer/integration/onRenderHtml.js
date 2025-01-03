@@ -5,7 +5,7 @@ import { escapeInject, dangerouslySkipEscape } from 'vike/server'
 import PassThrough from '../../components/PassThrough.svelte'
 import Empty from '../../components/Empty.svelte'
 import { getTitle } from '../getTitle.js'
-import { PageKey } from '../../hooks/context.js'
+import { PageKey } from '../utils/context.js'
 import { render } from 'svelte/server'
 
 /**

@@ -1,15 +1,15 @@
 {
   "name": "vike-svelte",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "type": "module",
-  "main": "./render/+config.js",
-  "types": "./dist/+config.d.ts",
+  "main": "./renderer/+config.js",
+  "types": "./dist/renderer/+config.d.ts",
   "exports": {
     "./config": "./renderer/+config.js",
     "./clientOnly": "./components/ClientOnly.svelte",
     "./__internal/integration/onRenderHtml": "./renderer/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./renderer/integration/onRenderClient.js",
-    "./context": "./hooks/context.js"
+    "./context": "./renderer/utils/context.js"
   },
   "scripts": {
     "build": "tsc",
@@ -32,7 +32,7 @@
   "typesVersions": {
     "*": {
       "config": [
-        "./dist/+config.d.ts"
+        "./dist/renderer/+config.d.ts"
       ],
       "__internal/integration/onRenderHtml": [
         "./dist/renderer/integration/onRenderHtml.d.ts"
@@ -41,7 +41,7 @@
         "./dist/renderer/integration/onRenderClient.d.ts"
       ],
       "context": [
-        "./dist/hooks/context.d.ts"
+        "./dist/renderer/utils/context.d.ts"
       ]
     }
   },
