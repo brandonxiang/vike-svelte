@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
-    "release-it": "^17.10.0",
+    "release-it": "^18.1.2",
     "svelte": "^5.2.7",
     "typescript": "^5.6.3",
     "vike": "^0.4.204",
