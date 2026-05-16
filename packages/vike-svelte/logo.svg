@@ -1,0 +1,32 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">vike-svelte logo</title>
+  <desc id="desc">A geometric V and S mark with Vike purple and Svelte orange gradients.</desc>
+  <defs>
+    <linearGradient id="bg" x1="48" y1="28" x2="196" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24143D"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="vike" x1="59" y1="69" x2="169" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="svelte" x1="79" y1="54" x2="183" y2="183" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB86B"/>
+      <stop offset="0.55" stop-color="#FF6A3D"/>
+      <stop offset="1" stop-color="#E6492D"/>
+    </linearGradient>
+    <filter id="shadow" x="20" y="18" width="200" height="205" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect x="20" y="20" width="200" height="200" rx="52" fill="url(#bg)"/>
+  <path d="M52 120C52 82.445 82.445 52 120 52C157.555 52 188 82.445 188 120C188 157.555 157.555 188 120 188C82.445 188 52 157.555 52 120Z" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="4"/>
+  <path d="M59 120C59 86.311 86.311 59 120 59C153.689 59 181 86.311 181 120C181 153.689 153.689 181 120 181" stroke="url(#vike)" stroke-width="10" stroke-linecap="round"/>
+  <g filter="url(#shadow)">
+    <path d="M69 74H100.77L122.58 143.61L144.39 74H176L137.12 178H108.04L69 74Z" fill="url(#vike)"/>
+    <path d="M153.58 75.43C139.24 66.83 116.94 67.25 102.7 77.34C90.68 85.86 87.1 99.13 94.07 110.09C100.09 119.56 112.73 123.43 125.23 127.26C136.79 130.8 148.23 134.31 152.35 141.93C155.77 148.24 151.88 155.71 143.1 160.43C131.82 166.5 114.19 165.33 101.64 157.68L88.51 175.08C108.47 187.53 136.94 188.35 156.88 177.41C175.41 167.24 181.45 149.04 171.84 134.78C164.34 123.65 150.25 119.39 136.97 115.38C125.79 112 115.18 108.8 111.65 102.68C108.84 97.8 112.16 91.99 119.42 88.37C128.81 83.68 143.17 84.2 153.76 90.02L166.2 72.25C162.32 69.8 158.11 67.71 153.58 75.43Z" fill="url(#svelte)"/>
+    <path d="M153.58 75.43C139.24 66.83 116.94 67.25 102.7 77.34C90.68 85.86 87.1 99.13 94.07 110.09C100.09 119.56 112.73 123.43 125.23 127.26C136.79 130.8 148.23 134.31 152.35 141.93C155.77 148.24 151.88 155.71 143.1 160.43C131.82 166.5 114.19 165.33 101.64 157.68" stroke="#FFF7ED" stroke-opacity="0.7" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <circle cx="184" cy="72" r="8" fill="#FFB86B"/>
+  <circle cx="58" cy="166" r="6" fill="#A78BFA"/>
+</svg>

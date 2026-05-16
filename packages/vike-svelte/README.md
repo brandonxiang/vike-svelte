@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vike.dev">
-    <img src="https://vike.dev/vike-readme.svg" width="120" alt="Vike logo" />
+    <img src="./logo.svg" width="120" alt="vike-svelte logo" />
   </a>
 </p>
 
