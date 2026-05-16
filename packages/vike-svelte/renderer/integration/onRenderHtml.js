@@ -2,10 +2,11 @@
 export { onRenderHtml }
 
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
-import PassThrough from '../../components/PassThrough.svelte'
+import RenderStack from '../../components/RenderStack.svelte'
 import Empty from '../../components/Empty.svelte'
 import { getTitle } from '../getTitle.js'
 import { PageKey } from '../utils/context.js'
+import { getComponentStack } from '../utils/componentStack.js'
 import { render } from 'svelte/server'
 
 /**
@@ -16,11 +17,13 @@ import { render } from 'svelte/server'
 function onRenderHtml(pageContext) {
   /** @type {*} */
   const config = pageContext.config
-  /** @type{*} */
-  const Layout = config.Layout?.[0] ?? PassThrough;
   const Page = pageContext.Page ?? Empty;
+  const components = getComponentStack(config, Page)
 
-  const app = render(Layout, { context: new Map([[PageKey, pageContext]]), props: { Page } })
+  const app = render(RenderStack, {
+    context: new Map([[PageKey, pageContext]]),
+    props: { components, Page },
+  })
   const { body, head } = app
 
   const title = getTitle(pageContext)

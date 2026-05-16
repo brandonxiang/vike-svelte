@@ -120,6 +120,8 @@ The renderer currently declares these Vike config entries:
 | `bodyAttributes` | Declared, renderer output tracked in [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | `onAfterRenderClient` | Declared for client runtime hooks |
 
+`Wrapper` entries render outside `Layout` entries. Cumulative entries compose in their resolved config order, then the page component renders at the center of the stack.
+
 ## 🧱 Parity With vike-react
 
 `vike-svelte` is not yet feature-equivalent with `vike-react`. The current work is split into executable issues:
@@ -129,7 +131,7 @@ The renderer currently declares these Vike config entries:
 | Public runtime hooks | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
 | Dynamic head and config APIs | [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
 | Renderer output for declared config | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| Cumulative `Layout` and `Wrapper` behavior | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
+| Cumulative `Layout` and `Wrapper` behavior | Cumulative composition is supported. See [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
 | Streaming support decision | [#21](https://github.com/brandonxiang/vike-svelte/issues/21) |
 | Client-only static removal behavior | [#22](https://github.com/brandonxiang/vike-svelte/issues/22) |
 | Parity matrix and ecosystem examples | [#23](https://github.com/brandonxiang/vike-svelte/issues/23) |
