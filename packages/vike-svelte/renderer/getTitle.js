@@ -8,6 +8,14 @@ import { isCallable } from './utils/isCallable.js'
  * @returns { null | string }
  */
 function getTitle(pageContext) {
+  const configFromHook = /** @type {*} */ (pageContext)._configFromHook
+  const titleFromHook = configFromHook?.title
+  if (titleFromHook) {
+    if (typeof titleFromHook !== 'string') {
+      throw new Error('pageContext._configFromHook.title should be a string')
+    }
+    return titleFromHook
+  }
   if (pageContext.title) {
     if (typeof pageContext.title !== 'string') {
       throw new Error('pageContext.title should be a string')

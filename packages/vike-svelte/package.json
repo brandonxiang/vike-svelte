@@ -6,7 +6,9 @@
   "types": "./dist/renderer/+config.d.ts",
   "exports": {
     "./config": "./renderer/+config.js",
+    "./Config": "./components/Config.svelte",
     "./clientOnly": "./components/ClientOnly.svelte",
+    "./useConfig": "./hooks/useConfig.js",
     "./__internal/integration/onRenderHtml": "./renderer/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./renderer/integration/onRenderClient.js",
     "./context": "./renderer/utils/context.js"
@@ -33,6 +35,9 @@
     "*": {
       "config": [
         "./dist/renderer/+config.d.ts"
+      ],
+      "useConfig": [
+        "./dist/hooks/useConfig.d.ts"
       ],
       "__internal/integration/onRenderHtml": [
         "./dist/renderer/integration/onRenderHtml.d.ts"

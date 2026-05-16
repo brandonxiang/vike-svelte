@@ -80,6 +80,34 @@ Use Svelte's native head support for component-local metadata:
 
 Public hook exports such as `vike-svelte/usePageContext` and `vike-svelte/useData` are tracked in [issue #17](https://github.com/brandonxiang/vike-svelte/issues/17).
 
+## 🏷️ Dynamic Page Config
+
+Use `useConfig()` when a Svelte component needs to set Vike-backed document metadata during SSR and client navigation.
+
+```svelte
+<script>
+  import { useConfig } from 'vike-svelte/useConfig'
+
+  useConfig({
+    title: 'Dashboard',
+    description: 'Team dashboard',
+    lang: 'en'
+  })
+</script>
+```
+
+For declarative component usage, import `vike-svelte/Config`.
+
+```svelte
+<script>
+  import Config from 'vike-svelte/Config'
+</script>
+
+<Config title="Dashboard" description="Team dashboard" />
+```
+
+Use Svelte's `<svelte:head>` for component-local tags that do not need to flow through Vike config. Use `useConfig()` or `<Config />` for title, description, language, and favicon values that should be visible to the renderer.
+
 ## 🧩 Client-Only Components
 
 Use `vike-svelte/clientOnly` when a component depends on browser APIs and should not render during SSR.
@@ -127,7 +155,7 @@ The renderer currently declares these Vike config entries:
 | Area | Issue |
 | --- | --- |
 | Public runtime hooks | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
-| Dynamic head and config APIs | [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
+| Dynamic head and config APIs | `useConfig()` and `<Config />` are supported. See [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
 | Renderer output for declared config | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | Cumulative `Layout` and `Wrapper` behavior | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
 | Streaming support decision | [#21](https://github.com/brandonxiang/vike-svelte/issues/21) |

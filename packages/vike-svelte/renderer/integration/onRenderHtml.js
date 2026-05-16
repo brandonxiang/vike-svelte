@@ -26,13 +26,15 @@ function onRenderHtml(pageContext) {
   const title = getTitle(pageContext)
   const titleTag = !title ? '' : escapeInject`<title>${title}</title>`
 
-  const { description } = config
+  const configFromHook = /** @type {*} */ (pageContext)._configFromHook ?? {}
+
+  const description = configFromHook.description ?? config.description
   const descriptionTag = !description ? '' : escapeInject`<meta name="description" content="${description}" />`
 
-  const { favicon } = config
+  const favicon = configFromHook.favicon ?? config.favicon
   const faviconTag = !favicon ? '' : escapeInject`<link rel="icon" href="${favicon}" />`
 
-  const lang = config.lang || 'en'
+  const lang = configFromHook.lang ?? config.lang ?? 'en'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
       <html lang="${lang}">
