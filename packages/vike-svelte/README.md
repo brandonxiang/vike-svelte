@@ -65,20 +65,27 @@ Use Svelte's native head support for component-local metadata:
 
 ## 🧭 Reading Page Context
 
-`vike-svelte` currently exposes the Svelte context keys through `vike-svelte/context`.
+`vike-svelte` exposes public hooks for reading Vike data from Svelte components.
 
 ```svelte
 <script>
-  import { getContext } from 'svelte'
-  import { PageKey } from 'vike-svelte/context'
+  import { usePageContext } from 'vike-svelte/usePageContext'
 
-  const pageContext = getContext(PageKey)
+  const pageContext = usePageContext()
 </script>
 
 <p>{pageContext.urlPathname}</p>
 ```
 
-Public hook exports such as `vike-svelte/usePageContext` and `vike-svelte/useData` are tracked in [issue #17](https://github.com/brandonxiang/vike-svelte/issues/17).
+Use `useData()` when a page only needs `pageContext.data`.
+
+```svelte
+<script>
+  import { useData } from 'vike-svelte/useData'
+
+  const data = useData()
+</script>
+```
 
 ## 🧩 Client-Only Components
 
@@ -126,7 +133,7 @@ The renderer currently declares these Vike config entries:
 
 | Area | Issue |
 | --- | --- |
-| Public runtime hooks | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
+| Public runtime hooks | `usePageContext()` and `useData()` are supported. See [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
 | Dynamic head and config APIs | [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
 | Renderer output for declared config | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | Cumulative `Layout` and `Wrapper` behavior | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |

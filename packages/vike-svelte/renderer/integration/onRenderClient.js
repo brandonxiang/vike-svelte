@@ -2,7 +2,7 @@ export { onRenderClient }
 
 import Empty from '../../components/Empty.svelte';
 import PassThrough from '../../components/PassThrough.svelte'
-import { PageKey } from '../utils/context.js'
+import { DataKey, PageKey } from '../utils/context.js'
 import { hydrate, mount, unmount } from 'svelte';
 
 /**
@@ -28,6 +28,10 @@ function onRenderClient(pageContext) {
   /** @type {import('svelte').Component} */
   const Layout = config.Layout?.[0] ?? PassThrough;
   const Page = pageContext.Page ?? Empty;
+  const context = new Map([
+    [PageKey, pageContext],
+    [DataKey, pageContext.data],
+  ])
 
 
 
@@ -38,7 +42,7 @@ function onRenderClient(pageContext) {
     if (pageContext.isHydration) {
       root = hydrate(Layout, {
         target,
-        context: new Map([[PageKey, pageContext]]),
+        context,
         props: {
           Page,
         }
@@ -46,7 +50,7 @@ function onRenderClient(pageContext) {
     } else {
       root = mount(Layout, {
         target,
-        context: new Map([[PageKey, pageContext]]),
+        context,
         props: {
           Page,
         }

@@ -1,9 +1,7 @@
 <script>
-    import { getContext } from 'svelte';
-    import { PageKey } from 'vike-svelte/context';
+    import { useData } from 'vike-svelte/useData';
 
-    const pageContext = getContext(PageKey);
-    const { data } = pageContext;
+    const data = useData();
     /**
      * @type {import('../types').MovieDetails[]}
      */

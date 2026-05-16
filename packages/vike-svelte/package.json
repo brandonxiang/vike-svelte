@@ -7,6 +7,8 @@
   "exports": {
     "./config": "./renderer/+config.js",
     "./clientOnly": "./components/ClientOnly.svelte",
+    "./useData": "./hooks/useData.js",
+    "./usePageContext": "./hooks/usePageContext.js",
     "./__internal/integration/onRenderHtml": "./renderer/integration/onRenderHtml.js",
     "./__internal/integration/onRenderClient": "./renderer/integration/onRenderClient.js",
     "./context": "./renderer/utils/context.js"
@@ -33,6 +35,12 @@
     "*": {
       "config": [
         "./dist/renderer/+config.d.ts"
+      ],
+      "useData": [
+        "./dist/hooks/useData.d.ts"
+      ],
+      "usePageContext": [
+        "./dist/hooks/usePageContext.d.ts"
       ],
       "__internal/integration/onRenderHtml": [
         "./dist/renderer/integration/onRenderHtml.d.ts"
