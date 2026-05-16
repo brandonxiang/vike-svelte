@@ -136,6 +136,8 @@ The renderer currently declares these Vike config entries:
 
 The original audit is available in [issue #16](https://github.com/brandonxiang/vike-svelte/issues/16).
 
+For a fuller feature matrix and Svelte ecosystem plan, see [docs/parity.md](https://github.com/brandonxiang/vike-svelte/blob/main/docs/parity.md).
+
 ## 🧪 Examples
 
 - [Minimal example](https://github.com/brandonxiang/vike-svelte/tree/main/examples/minimal)
