@@ -120,6 +120,20 @@ The renderer currently declares these Vike config entries:
 | `bodyAttributes` | Declared, renderer output tracked in [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | `onAfterRenderClient` | Declared for client runtime hooks |
 
+Example:
+
+```js
+export default {
+  viewport: 'width=device-width, initial-scale=1',
+  htmlAttributes: {
+    'data-renderer': 'vike-svelte'
+  },
+  bodyAttributes: {
+    'data-app-shell': 'default'
+  }
+}
+```
+
 ## 🧱 Parity With vike-react
 
 `vike-svelte` is not yet feature-equivalent with `vike-react`. The current work is split into executable issues:
@@ -128,7 +142,7 @@ The renderer currently declares these Vike config entries:
 | --- | --- |
 | Public runtime hooks | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
 | Dynamic head and config APIs | [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
-| Renderer output for declared config | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
+| Renderer output for declared config | `viewport`, `htmlAttributes`, and `bodyAttributes` are supported. See [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | Cumulative `Layout` and `Wrapper` behavior | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
 | Streaming support decision | [#21](https://github.com/brandonxiang/vike-svelte/issues/21) |
 | Client-only static removal behavior | [#22](https://github.com/brandonxiang/vike-svelte/issues/22) |

@@ -19,6 +19,8 @@ declare global {
       title?: string
       /** &lt;meta name="description" content="${description}" /> */
       description?: string
+      /** &lt;meta name="viewport" content="${viewport}" /> */
+      viewport?: string
       /** &lt;link rel="icon" href="${favicon}" /> */
       favicon?: string
       /** &lt;html lang="${lang}">
@@ -39,6 +41,10 @@ declare global {
        *
        */
       ssr?: boolean
+      /** Additional attributes rendered on the root &lt;html> element. */
+      htmlAttributes?: Record<string, string | number | boolean | null | undefined>
+      /** Additional attributes rendered on the &lt;body> element. */
+      bodyAttributes?: Record<string, string | number | boolean | null | undefined>
     }
   }
 }
@@ -55,6 +61,8 @@ declare global {
       title?: string
       /** &lt;meta name="description" content="${description}" /> */
       description?: string
+      /** &lt;meta name="viewport" content="${viewport}" /> */
+      viewport?: string
       /** &lt;link rel="icon" href="${favicon}" /> */
       favicon?: string
       /** &lt;html lang="${lang}">
@@ -75,6 +83,10 @@ declare global {
        *
        */
       ssr?: boolean
+      /** Additional attributes rendered on the root &lt;html> element. */
+      htmlAttributes?: Record<string, string | number | boolean | null | undefined>
+      /** Additional attributes rendered on the &lt;body> element. */
+      bodyAttributes?: Record<string, string | number | boolean | null | undefined>
     }
   }
 }
