@@ -54,9 +54,6 @@ export default {
       env: { config: true },
       effect: ssrEffect,
     },
-    stream: {
-      env: { server: true },
-    },
     htmlAttributes: {
       env: { server: true },
       global: true,

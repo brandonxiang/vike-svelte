@@ -39,6 +39,11 @@ declare global {
        *
        */
       ssr?: boolean
+      /**
+       * Streaming is not supported yet. The current renderer uses Svelte's full
+       * `render()` output and returns a complete HTML document.
+       */
+      stream?: never
     }
   }
 }
@@ -75,6 +80,11 @@ declare global {
        *
        */
       ssr?: boolean
+      /**
+       * Streaming is not supported yet. The current renderer uses Svelte's full
+       * `render()` output and returns a complete HTML document.
+       */
+      stream?: never
     }
   }
 }
