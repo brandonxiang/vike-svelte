@@ -11,7 +11,7 @@
   /** @type {Props} */
   let { target, componentProps, fallback } = $props()
 
-  const ComponentConstructor = BROWSER ? target : new Promise(() => {})
+  const ComponentConstructor = $derived(BROWSER ? target : new Promise(() => {}))
 </script>
 
 {#await ComponentConstructor}
@@ -21,7 +21,7 @@
     <p>Loading...</p>
   {/if}
 {:then TargetComponent}
-	<TargetComponent {...componentProps}></TargetComponent>
+  <TargetComponent {...componentProps}></TargetComponent>
 {:catch error}
   <p>Something went wrong: {error.message}</p>
 {/await}

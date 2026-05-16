@@ -23,8 +23,10 @@ function onRenderClient(pageContext) {
     throw new Error('target not found');
   }
 
+  /** @type {*} */
+  const config = pageContext.config
   /** @type {import('svelte').Component} */
-  const Layout = pageContext.config.Layout?.[0] ?? PassThrough;
+  const Layout = config.Layout?.[0] ?? PassThrough;
   const Page = pageContext.Page ?? Empty;
 
 

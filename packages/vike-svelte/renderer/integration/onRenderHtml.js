@@ -11,11 +11,13 @@ import { render } from 'svelte/server'
 /**
  * 
  * @param {import('vike/types').PageContext} pageContext 
- * @returns 
+ * @returns {any}
  */
 function onRenderHtml(pageContext) {
+  /** @type {*} */
+  const config = pageContext.config
   /** @type{*} */
-  const Layout = pageContext.config.Layout?.[0] ?? PassThrough;
+  const Layout = config.Layout?.[0] ?? PassThrough;
   const Page = pageContext.Page ?? Empty;
 
   const app = render(Layout, { context: new Map([[PageKey, pageContext]]), props: { Page } })
@@ -24,13 +26,13 @@ function onRenderHtml(pageContext) {
   const title = getTitle(pageContext)
   const titleTag = !title ? '' : escapeInject`<title>${title}</title>`
 
-  const { description } = pageContext.config
+  const { description } = config
   const descriptionTag = !description ? '' : escapeInject`<meta name="description" content="${description}" />`
 
-  const { favicon } = pageContext.config
+  const { favicon } = config
   const faviconTag = !favicon ? '' : escapeInject`<link rel="icon" href="${favicon}" />`
 
-  const lang = pageContext.config.lang || 'en'
+  const lang = config.lang || 'en'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
       <html lang="${lang}">

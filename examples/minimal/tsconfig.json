@@ -4,12 +4,12 @@
     "allowJs": true,
     "strict": true,
     "module": "ES2020",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["vite/client"],
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "exclude": ["../minimal/distin/dist"]
+  "exclude": ["dist"]
 }

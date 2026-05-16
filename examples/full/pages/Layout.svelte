@@ -11,8 +11,6 @@
   /** @type {Props} */
   let { Page } = $props();
 
-  console.log('Rendering Layout', Page);
-
 </script>
 
 <svelte:head>
