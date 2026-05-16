@@ -9,6 +9,13 @@ import logoUrl from '../assets/logo.svg'
 export default {
   title: 'My Vike + Svelte App',
   description: 'Demo showcasing Vike + Svelte',
+  viewport: 'width=device-width, initial-scale=1',
+  htmlAttributes: {
+    'data-renderer': 'vike-svelte',
+  },
+  bodyAttributes: {
+    'data-app-shell': 'minimal',
+  },
   favicon: logoUrl,
   Layout,
   extends: vikeSvelte
