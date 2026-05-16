@@ -26,5 +26,8 @@
     "./renderer",
     "./hooks",
     "./components",
+  ],
+  "exclude": [
+    "**/*.test.js"
   ]
 }

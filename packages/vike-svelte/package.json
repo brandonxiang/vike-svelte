@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "test": "vitest run",
     "release": "release-it"
   },
   "peerDependencies": {
@@ -28,10 +29,12 @@
   "devDependencies": {
     "@types/node": "^25.8.0",
     "esm-env": "^1.2.2",
+    "happy-dom": "^20.9.0",
     "release-it": "^20.0.1",
     "svelte": "^5.55.7",
     "typescript": "^6.0.3",
-    "vike": "^0.4.259"
+    "vike": "^0.4.259",
+    "vitest": "^4.1.6"
   },
   "typesVersions": {
     "*": {

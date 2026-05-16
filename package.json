@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "cd packages/vike-svelte/ && pnpm run dev",
     "build": "cd packages/vike-svelte/ && pnpm run build",
+    "test": "cd packages/vike-svelte/ && pnpm run test",
     "========= Clean": "",
     "clean": "git clean -Xdf",
     "reset": "pnpm run clean && pnpm install && pnpm run build",
