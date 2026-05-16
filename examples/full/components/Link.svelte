@@ -1,7 +1,5 @@
 <script>
-  import { getContext } from "svelte"
-  
-  import { PageKey } from 'vike-svelte/context'
+  import { usePageContext } from 'vike-svelte/usePageContext'
   
   /**
    * @typedef {Object} Props
@@ -14,7 +12,7 @@
   
   let isActive = $state(false)
   
-  const pageContext = getContext(PageKey);
+  const pageContext = usePageContext();
   
   $effect(() => {
     const { urlPathname } = pageContext

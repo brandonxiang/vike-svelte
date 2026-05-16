@@ -1,7 +1,11 @@
-import { getContext } from "svelte";
+import { getContext } from 'svelte'
+import { DataKey } from '../renderer/utils/context.js'
 
-export const key = 'vike-svelte:useData';
-
+/**
+ * Read `pageContext.data` from Svelte component context.
+ *
+ * @returns {unknown}
+ */
 export function useData() {
-    return getContext(key);
+  return getContext(DataKey)
 }

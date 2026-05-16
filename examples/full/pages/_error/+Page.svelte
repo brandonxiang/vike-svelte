@@ -1,6 +1,5 @@
 <script>
- import { PageKey } from 'vike-svelte/context' 
- import { getContext } from 'svelte'
+ import { usePageContext } from 'vike-svelte/usePageContext'
   /**
    * @typedef {Object} Props
    * @property {boolean} is404
@@ -10,7 +9,7 @@
   /** @type {Props} */
   // let { is404, errorInfo = '' } = $props();
 
-  const { is404, errorInfo= '' } = getContext(PageKey);
+  const { is404, errorInfo= '' } = usePageContext();
 </script>
 
 {#if is404}
