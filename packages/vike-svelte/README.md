@@ -135,6 +135,8 @@ Use `vike-svelte/clientOnly` when a component depends on browser APIs and should
 
 The current API uses `target`, `componentProps`, and `fallback`. Client-only parity with `vike-react` is tracked in [issue #22](https://github.com/brandonxiang/vike-svelte/issues/22).
 
+On the server, `ClientOnly` renders only the fallback component. If no fallback is provided, it renders nothing. The browser-only target component is mounted on the client, which avoids rendering browser API usage during SSR. `vike-svelte` does not currently implement React-style static replacement or compile-time tree-shaking for the target component.
+
 ## ⚙️ Supported Config
 
 The renderer currently declares these Vike config entries:
@@ -182,7 +184,7 @@ export default {
 | Renderer output for declared config | `viewport`, `htmlAttributes`, and `bodyAttributes` are supported. See [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
 | Cumulative `Layout` and `Wrapper` behavior | Cumulative composition is supported. See [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
 | Streaming support decision | Streaming is intentionally deferred. See [#21](https://github.com/brandonxiang/vike-svelte/issues/21) |
-| Client-only static removal behavior | [#22](https://github.com/brandonxiang/vike-svelte/issues/22) |
+| Client-only static removal behavior | Runtime fallback behavior is documented; static replacement is not supported. See [#22](https://github.com/brandonxiang/vike-svelte/issues/22) |
 | Parity matrix and ecosystem examples | [#23](https://github.com/brandonxiang/vike-svelte/issues/23) |
 
 The original audit is available in [issue #16](https://github.com/brandonxiang/vike-svelte/issues/16).

@@ -3,25 +3,20 @@
 
   /**
    * @typedef {Object} Props
-   * @property {import('svelte').SvelteComponent } target
-   * @property {*} componentProps
-   * @property {import('svelte').SvelteComponent | undefined } fallback
+   * @property {import('svelte').Component } target
+   * @property {*} [componentProps]
+   * @property {import('svelte').Component | undefined } [fallback]
    */
 
   /** @type {Props} */
-  let { target, componentProps, fallback } = $props()
+  let { target, componentProps = {}, fallback } = $props()
 
-  const ComponentConstructor = $derived(BROWSER ? target : new Promise(() => {}))
+  const TargetComponent = $derived(BROWSER ? target : undefined)
+  const FallbackComponent = $derived(fallback)
 </script>
 
-{#await ComponentConstructor}
-  {#if fallback}
-    <fallback {...componentProps}></fallback>
-  {:else}
-    <p>Loading...</p>
-  {/if}
-{:then TargetComponent}
+{#if TargetComponent}
   <TargetComponent {...componentProps}></TargetComponent>
-{:catch error}
-  <p>Something went wrong: {error.message}</p>
-{/await}
+{:else if FallbackComponent}
+  <FallbackComponent {...componentProps}></FallbackComponent>
+{/if}
