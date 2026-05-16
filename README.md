@@ -98,7 +98,11 @@ Use `useConfig()` when a Svelte component needs to set Vike-backed document meta
   useConfig({
     title: 'Dashboard',
     description: 'Team dashboard',
-    lang: 'en'
+    lang: 'en',
+    viewport: 'width=device-width, initial-scale=1',
+    htmlAttributes: {
+      'data-section': 'dashboard'
+    }
   })
 </script>
 ```
@@ -113,7 +117,7 @@ For declarative component usage, import `vike-svelte/Config`.
 <Config title="Dashboard" description="Team dashboard" />
 ```
 
-Use Svelte's `<svelte:head>` for component-local tags that do not need to flow through Vike config. Use `useConfig()` or `<Config />` for title, description, language, and favicon values that should be visible to the renderer.
+Use Svelte's `<svelte:head>` for component-local tags that do not need to flow through Vike config. Use `useConfig()` or `<Config />` for title, description, language, favicon, viewport, and document attribute values that should be visible to the renderer.
 
 ## 🧩 Client-Only Components
 
@@ -143,18 +147,18 @@ The renderer currently declares these Vike config entries:
 
 | Config | Status |
 | --- | --- |
-| `Layout` | Supported, cumulative parity work tracked in [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
+| `Layout` | Supported with cumulative composition |
 | `Head` | Declared, dynamic head/config API tracked in [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
-| `Wrapper` | Declared, renderer application tracked in [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
+| `Wrapper` | Supported with cumulative composition |
 | `title` | Supported through renderer title output |
 | `description` | Supported through renderer description output |
 | `favicon` | Supported through renderer favicon output |
 | `lang` | Supported through `<html lang>` |
 | `ssr` | Supported through the renderer config effect |
 | `stream` | Not supported yet; the renderer returns full Svelte `render()` output. See [#21](https://github.com/brandonxiang/vike-svelte/issues/21) |
-| `viewport` | Declared, renderer output tracked in [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| `htmlAttributes` | Declared, renderer output tracked in [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| `bodyAttributes` | Declared, renderer output tracked in [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
+| `viewport` | Supported through renderer and runtime config output |
+| `htmlAttributes` | Supported on `<html>` through renderer and runtime config output |
+| `bodyAttributes` | Supported on `<body>` through renderer and runtime config output |
 | `onAfterRenderClient` | Declared for client runtime hooks |
 
 Example:

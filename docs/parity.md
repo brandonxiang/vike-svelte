@@ -17,9 +17,9 @@ This page tracks the practical feature gap between `vike-svelte` and `vike-react
 
 | Capability | vike-svelte status | Tracking |
 | --- | --- | --- |
-| Page context hook | Planned | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
-| Data hook | Planned | [#17](https://github.com/brandonxiang/vike-svelte/issues/17) |
-| Dynamic config hook/component | Planned | [#18](https://github.com/brandonxiang/vike-svelte/issues/18) |
+| Page context hook | Supported | `vike-svelte/usePageContext` |
+| Data hook | Supported | `vike-svelte/useData` |
+| Dynamic config hook/component | Supported | `vike-svelte/useConfig` and `vike-svelte/Config` |
 | Head component | Intentionally different | Prefer Svelte `<svelte:head>` for component-local tags. Vike-backed metadata is tracked in [#18](https://github.com/brandonxiang/vike-svelte/issues/18). |
 | ClientOnly | Supported with Svelte API | Runtime fallback behavior exists. Static replacement parity is tracked in [#22](https://github.com/brandonxiang/vike-svelte/issues/22). |
 
@@ -31,11 +31,11 @@ This page tracks the practical feature gap between `vike-svelte` and `vike-react
 | `description` | Supported | Rendered as description meta. |
 | `favicon` | Supported | Rendered as favicon link. |
 | `lang` | Supported | Rendered on `<html>`. |
-| `viewport` | Planned | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| `htmlAttributes` | Planned | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| `bodyAttributes` | Planned | [#19](https://github.com/brandonxiang/vike-svelte/issues/19) |
-| cumulative `Layout` | Planned | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
-| cumulative `Wrapper` | Planned | [#20](https://github.com/brandonxiang/vike-svelte/issues/20) |
+| `viewport` | Supported | Rendered as viewport meta and can be updated by `useConfig()` / `<Config />`. |
+| `htmlAttributes` | Supported | Rendered on `<html>` and can be updated by `useConfig()` / `<Config />`. |
+| `bodyAttributes` | Supported | Rendered on `<body>` and can be updated by `useConfig()` / `<Config />`. |
+| cumulative `Layout` | Supported | Cumulative entries compose around the page. |
+| cumulative `Wrapper` | Supported | Cumulative entries compose outside layouts. |
 
 ## Ecosystem Examples
 
