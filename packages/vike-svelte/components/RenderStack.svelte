@@ -1,5 +1,6 @@
 <script>
   import { getContext, setContext } from 'svelte'
+  import RenderStackSelf from './RenderStack.svelte'
 
   const StackKey = 'vike-svelte:render-stack'
   const IndexKey = 'vike-svelte:render-stack-index'
@@ -36,4 +37,4 @@
   const Component = $derived(stack.components[index] ?? stack.Page)
 </script>
 
-<Component Page={RenderStack} />
+<Component Page={RenderStackSelf} />
